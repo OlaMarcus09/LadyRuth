@@ -25,3 +25,32 @@
 .booking-socials a:hover,.footer-links a:hover{color:var(--paper)}
 .footer-links{display:flex;gap:16px;justify-content:flex-end;flex-wrap:wrap;font-size:11px;color:var(--gold)}
 @media(max-width:800px){.booking-socials{max-width:320px}.footer-links{justify-content:flex-start}}
+
+/* Portfolio additions follow the site's existing editorial grid and gold accents. */
+.gallery-item{isolation:isolate;background:linear-gradient(135deg,#292329,#171419)}
+.gallery-item::before{content:'✦';position:absolute;inset:0;display:grid;place-items:center;color:rgba(216,170,105,.45);font-size:25px}
+.gallery-item img{position:relative;z-index:1}
+.gallery-item::after{content:'';position:absolute;inset:48% 0 0;z-index:2;background:linear-gradient(transparent,rgba(0,0,0,.62));pointer-events:none}
+.gallery-item span{z-index:3;right:12px;bottom:16px;font-size:11px;line-height:1.4}
+.gallery-item:focus-visible,.lightbox button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.item-8{grid-column:span 4}
+.item-9,.item-10,.item-11{grid-column:span 4;height:420px}
+.item-9 img,.item-10 img{object-position:center 24%}
+.item-11 img{object-position:center 29%}
+.performance{margin-top:90px;padding-top:38px;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(220px,.7fr) minmax(0,1fr);gap:6vw;align-items:center}
+.performance-copy h3{font:500 clamp(34px,3.5vw,56px)/1.08 'Playfair Display',serif;letter-spacing:-.035em;margin:18px 0}
+.performance-copy>p:last-child{font-size:14px;line-height:1.7;color:#b9b1ac;max-width:310px}
+.performance-video{display:block;width:min(100%,420px);aspect-ratio:9/16;object-fit:contain;background:#080709;border:1px solid var(--line);justify-self:center}
+.lightbox{padding:30px 80px;grid-template-columns:48px minmax(0,1fr) 48px;gap:20px}
+.lightbox figure{margin:0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.lightbox-image-wrap{position:relative;min-width:0;min-height:100px;display:grid;place-items:center}
+.lightbox img{display:block;max-width:100%;max-height:calc(100dvh - 130px);object-fit:contain}
+.lightbox .lightbox-loading{position:absolute;inset:0;transform:none;display:grid;place-items:center;color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#100f12}
+.lightbox figcaption{display:flex;gap:28px;justify-content:space-between;width:min(100%,800px);padding-top:14px;color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:.1em;line-height:1.5}
+.lightbox figcaption span{position:static;transform:none;color:#a79b91;white-space:nowrap}
+.lightbox button{position:static;border:1px solid var(--line);background:rgba(16,15,18,.7);width:48px;height:48px;display:grid;place-items:center;border-radius:50%;font-size:30px;line-height:1;cursor:pointer;color:var(--paper)}
+.lightbox button:hover{border-color:var(--gold);color:var(--gold)}
+.lightbox .lightbox-close{position:absolute;right:24px;top:20px;font-size:30px}
+@media(max-width:800px){.item-8,.item-9,.item-10,.item-11{grid-column:span 1;height:245px}.item-11{grid-column:span 2;height:340px}.performance{grid-template-columns:1fr;margin-top:65px;gap:25px}.performance-copy h3{font-size:42px}.lightbox{padding:75px 12px 28px;grid-template-columns:38px minmax(0,1fr) 38px;gap:6px}.lightbox button{width:38px;height:38px;font-size:26px}.lightbox .lightbox-close{right:16px;top:16px}.lightbox img{max-height:calc(100dvh - 190px)}.lightbox figcaption{font-size:10px;gap:8px}}
+@media(max-width:480px){.gallery-item span{font-size:9px;left:9px;bottom:10px}.gallery-item,.item-1,.item-2,.item-3,.item-4,.item-5,.item-6,.item-7,.item-8,.item-9,.item-10,.item-11{height:210px}.item-1,.item-6,.item-11{height:280px}}
+@media(prefers-reduced-motion:reduce){.gallery-item img{transition:none}.gallery-item:hover img{transform:none}.reveal{transition:none}}
